@@ -6,7 +6,7 @@ const BentoGrid = () => {
 
         <div className="flex flex-col gap-2 bg-neutral-200/5 col-span-2 overflow-hidden w-fit rounded-sm border">
             <h4 className='text-sm font-semibold leading-tight capitalize text-center'>Are you looking for the best teams?</h4>
-            <p className='text-sm p-1 font-'> <span className='text-blue-300'>Cipherplus</span>'s got you covered, with seasoned developers, with great team spirit your next big project will be delivered in no time.</p>
+            <p className='text-sm p-1 font-'> <span className='text-blue-300'>Cipherplus</span>&apos;s got you covered, with seasoned developers, with great team spirit your next big project will be delivered in no time.</p>
         </div>
 
         <div className="flex bg-neutral-200/5">
