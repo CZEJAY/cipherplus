@@ -8,7 +8,7 @@ const Header = () => {
   return (
     <nav
     className='
-    w-full h-20 bg-transparent backdrop-blur-sm sm:backdrop-blur-lg text-white flex items-center justify-between px-4 fixed top-0 shadow-xl z-50 
+    w-full h-20 bg-transparent backdrop-blur-sm sm:backdrop-blur-lg text-white flex items-center justify-between px-[2.5vw] fixed top-0 shadow-xl z-50 
     '
     >
         <Link href={"/"} className="flex items-center gap-2">
