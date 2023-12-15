@@ -2,7 +2,7 @@ import React from "react";
 
 const Users = () => {
   return (
-    <div className="bg-gray-950 dark:bg-neutral-950 w-full h-full min-h-[250px] p-2">
+    <div className="bg-gray-950 dark:bg-neutral-950 w-full h-full min-h-[250px] p-2 overflow-x-hidden">
       <h1 className="text-white text-2xl brightness-200 font-bold text-center mb-2 leading-tight">
         Welcome to Cipherplus: Verified Code Security
       </h1>
@@ -18,6 +18,11 @@ const Users = () => {
             vulnerabilities and learn about the evolving cybersecurity landscape
             that directly impacts your code.
           </p>
+          <div className="flex gap-2">
+            <span className="bg-gray-800 text-gray-50 p-1 rounded-full">Syntax</span>
+            <span className="bg-gray-800 text-gray-50 p-1 rounded-full">Code</span>
+            <span className="bg-gray-800 text-gray-50 p-1 rounded-full">Next.js</span>
+          </div>
         </div>
       </div>
 
@@ -33,7 +38,6 @@ const Users = () => {
             implement secure coding habits that stand the test of time.
           </p>
         </div>
-        
       </div>
     </div>
   );
