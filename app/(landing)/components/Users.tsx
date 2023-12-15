@@ -13,7 +13,7 @@ const Users = () => {
             Understanding Code Security: A Foundation for Success
           </h4>
           <p className="ml-2 mt-2 text-gray-50 leading-tight p-1">
-            Delve into the fundamentals of code security and discover why it's a
+            Delve into the fundamentals of code security and discover why it&apos;s a
             non-negotiable aspect of modern programming. Uncover common
             vulnerabilities and learn about the evolving cybersecurity landscape
             that directly impacts your code.
