@@ -13,7 +13,7 @@ const BentoGrid = () => {
         </div>
 
         <div className="flex bg-neutral-200/5">
-            <img src="/team.gif" className='rounded-sm w-full h-full object-cover' alt="" />
+            <Image width={200} height={200} src="/team.gif" className='rounded-sm w-full h-full object-cover' alt="" />
         </div>
 
         <div className="flex  bg-neutral-200/5 col-span-2">
@@ -37,7 +37,7 @@ const BentoGrid = () => {
 
         <div className="flex p-4 flex-col gap-2 bg-neutral-200/5 col-span-2">
           <h4 className='text-sm font-semibold leading-tight capitalize text-center sm:text-xl text-emerald-500'>Do you need a standalone highly skilled Software Developer?</h4>
-          <p className='text-sm sm:text-lg p-1 font-normal'>We offer the best of our kind, so you'd minimize cost but yet get the job done with just one developer.</p>
+          <p className='text-sm sm:text-lg p-1 font-normal'>We offer the best of our kind, so you&apos;d minimize cost but yet get the job done with just one developer.</p>
           <Button className='bg-emerald-950 mt-auto hover:bg-emerald-800 dark:text-white '>View Developers</Button>
         </div>
 
