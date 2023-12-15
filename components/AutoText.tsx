@@ -26,7 +26,7 @@ const AutoText: React.FC<AutoTextProps> = ({ textArray, speed }) => {
     return () => clearInterval(interval);
   }, [displayText, currentIndex, textArray, speed]);
 
-  return <span className={"autoText !border-r-blue-500 !text-[2.39rem] sm:text-[2.95rem]"}>{displayText}</span>;
+  return <span className={"autoText !border-r-blue-500 !text-[1.5rem] sm:text-[2.95rem]"}>{displayText}</span>;
 };
 
 export default AutoText;
