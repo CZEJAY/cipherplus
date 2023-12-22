@@ -105,3 +105,15 @@
     
   );
 }
+
+form {
+  transition: transform 2s ease-in-out;
+}
+
+.step-1 {
+  transform: translateX(0);
+}
+
+.step-2 {
+  transform: translateX(-100%);
+}

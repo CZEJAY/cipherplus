@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<!-- saved from url=(0154)https://edu.gcfglobal.org/callback?error=login_required&error_description=End-User%20authentication%20is%20required&state=31ad33a808224d7da31e6d73ed3592b5 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title></title>
+</head>
+
+<body>
+    <script src="./oidc-client.slim.min(1).js.download" type="text/javascript"></script>
+    <script type="text/javascript">
+        var mgr = new Oidc.UserManager({ loadUserInfo: true, filterProtocolClaims: true, response_mode: "query" });
+        mgr.signinRedirectCallback().then(() => {
+        }).catch((error) => {
+            sessionStorage.setItem('oidc.user', null);
+        });
+    </script>
+
+
+</body></html>

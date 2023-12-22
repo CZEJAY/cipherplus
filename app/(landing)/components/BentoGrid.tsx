@@ -9,7 +9,7 @@ const BentoGrid = () => {
 
         <div className="flex flex-col gap-2 bg-neutral-200/5 col-span-2 overflow-hidden w-fit rounded-sm border px-1 pb-1">
             <h4 className='text-sm font-semibold leading-tight capitalize text-center sm:text-xl text-blue-500'>Are you looking for the best teams?</h4>
-            <p className='text-sm font-normal leading-tight text-gray-500 dark:text-gray-50'> <span className='text-blue-300'>Cipherplus</span> got you covered, with seasoned developers, with great team spirit your next big project will be delivered in no time.</p>
+            <p className='text-sm font-normal leading-tight text-gray-500 dark:text-gray-50'> <span className='text-blue-300'>DevConnector</span> got you covered, with seasoned developers, with great team spirit your next big project will be delivered in no time.</p>
             <Button className='bg-blue-500 hover:bg-blue-600 dark:text-white mt-auto '>View Teams</Button>
         </div>
 
