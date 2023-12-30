@@ -25,6 +25,7 @@ import * as z from "zod";
 import { useForm } from "react-hook-form";
 
 import { zodResolver } from "@hookform/resolvers/zod";
+import { signIn } from "next-auth/react";
 
 interface UserAuthFormProps extends React.HTMLAttributes<HTMLDivElement> {}
 
@@ -63,6 +64,24 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
     } else {
       setPasswordId("password");
     }
+  }
+
+  const signInGitHub = async () => {
+    setIsLoadingGithub(true);
+   await signIn("github", {
+      callbackUrl: `/`,
+      redirect: false,
+    });
+    setIsLoadingGithub(false);
+  }
+
+  const signInGoogle = async () => {
+    setIsLoadingGoogle(true)
+    await signIn("google", {
+      callbackUrl: `/`,
+      redirect: false,
+    })
+    setIsLoadingGoogle(false)
   }
 
   return (
@@ -133,7 +152,7 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
           </span>
         </div>
       </div>
-      <Button variant="outline" type="button" disabled={isLoading}>
+      <Button onClick={() => signInGitHub()} variant="outline" type="button" disabled={isLoading}>
         {isLoadingGithub ? (
           <Loader2 className="mr-2 h-4 w-4 animate-spin" />
         ) : (
@@ -141,7 +160,7 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
         )}{" "}
         Github
       </Button>
-      <Button variant="outline" type="button" disabled={isLoading}>
+      <Button onClick={() => signInGoogle()} variant="outline" type="button" disabled={isLoading}>
         {isLoadingGoogle ? (
           <Loader2 className="mr-2 h-4 w-4 animate-spin" />
         ) : (

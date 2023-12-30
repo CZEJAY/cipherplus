@@ -3,8 +3,10 @@ import GithubProvider from "next-auth/providers/github"
 import GoogleProvider from "next-auth/providers/google"
 import { CredentialsProvider } from "next-auth/providers/credentials"
 import { PrismaAdapter } from "@next-auth/prisma-adapter"
+import prismadb from "@/lib/prismadb"
 
 export const authOptions: NextAuthOptions = {
+  adapter: PrismaAdapter(prismadb),
   // Configure one or more authentication providers
   providers: [
     GithubProvider({

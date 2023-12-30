@@ -25,14 +25,14 @@ export default function AuthenticationPage() {
         <div className="relative hidden h-full flex-col bg-muted p-10 text-white dark:border-r lg:flex">
           <div className="absolute inset-0 bg-zinc-900" />
           <div className="relative z-20 flex items-center text-lg font-medium">
-            Acme Inc
+            Devconnector Inc
           </div>
           <div className="relative z-20 mt-auto">
             <blockquote className="space-y-2">
               <p className="text-lg">
                 
               </p>
-              <footer className="text-sm">Sofia Davis</footer>
+              <footer className="text-sm">&copy; 2030 DevConnector. All rights reserved.</footer>
             </blockquote>
           </div>
         </div>
