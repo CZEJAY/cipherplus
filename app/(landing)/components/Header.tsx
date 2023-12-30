@@ -1,8 +1,10 @@
+"use client";
 import { Button } from "@/components/ui/button";
 import React from "react";
 import { Plus } from "lucide-react";
 import { ModeToggle } from "@/components/ThemeSwitch";
 import Link from "next/link";
+import { SignedIn, SignedOut } from "@/components/SignedIn";
 
 const Header = () => {
   return (
@@ -22,26 +24,49 @@ const Header = () => {
         </span>
       </Link>
 
-      <div className=" flex items-center gap-1">
-        <Link href={"/auth/sign-up"}>
-          <Button
-            className="
+      <SignedOut>
+        <div className=" flex items-center gap-1">
+          <Link href={"/auth/sign-up"}>
+            <Button
+              className="
             dark:bg-gray-100  dark:text-sky-50
             gradient hover:opacity-70 transition-all duration-200
              border"
-          >
-            Get Started
-          </Button>
-        </Link>
-        <Link href={"/sign-in"}>
-          <Button variant="outline" className="text-gray-950 dark:text-gray-50">
-            Login
-          </Button>
-        </Link>
-        <div className="text-black dark:text-gray-50">
-          <ModeToggle />
+            >
+              Get Started
+            </Button>
+          </Link>
+          <Link href={"/sign-in"}>
+            <Button
+              variant="outline"
+              className="text-gray-950 dark:text-gray-50"
+            >
+              Login
+            </Button>
+          </Link>
+          <div className="text-black dark:text-gray-50">
+            <ModeToggle />
+          </div>
         </div>
-      </div>
+      </SignedOut>
+
+      <SignedIn>
+        <div className="flex items-center gap-1">
+          <Link href={"/dashboard"}>
+            <Button
+              className="
+            dark:bg-gray-100  dark:text-sky-50
+            gradient hover:opacity-70 transition-all duration-200
+             border"
+            >
+              Dashboard
+            </Button>
+          </Link>
+          <div className="text-black dark:text-gray-50">
+            <ModeToggle />
+          </div>
+        </div>
+      </SignedIn>
     </nav>
   );
 };
