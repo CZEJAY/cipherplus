@@ -20,34 +20,6 @@ export const authOptions: NextAuthOptions = {
     // ...add more providers here
   ],
 
-  callbacks: {
-
-    
-
-  //   // @ts-ignore
-        // async jwt({ token, account, user }) {
-        //     if(account?.provider === "google"){
-        //         return {
-        //             ...token,
-        //             id: user?.id,
-        //         }
-        //     }
-        // },
-  //       //@ts-ignore
-  //       async session({ session, token, account }) {
-  //           if(token?.id){
-  //               return {
-  //                   ...session,
-  //                   user: {
-  //                       ...session.user,
-  //                       id: token.id
-  //                   }
-  //               }
-  //           }
-  //       }
-
-   },
-
   secret: process.env.NEXTAUTH_SECRET,
   session: {
     strategy: "jwt",
