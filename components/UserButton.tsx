@@ -6,14 +6,14 @@ import Image from 'next/image';
 
 const UserButton = () => {
     const {data: session} = useSession();
-    console.log(session);
+    // console.log(session);
   return (
-    <div>
+    <div className='cursor-pointer hover:opacity-75 duration-200'>
         <Image 
         src={session?.user?.image as string}
         alt='User'
-        width={50}
-        height={50}
+        width={40}
+        height={40}
         className='rounded-full'
 
          />

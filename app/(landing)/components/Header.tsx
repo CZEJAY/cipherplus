@@ -64,8 +64,8 @@ const Header = () => {
             </Button>
           </Link>
           <div className="text-black dark:text-gray-50 flex  gap-1">
-            <UserButton />
             <ModeToggle />
+            <UserButton />
           </div>
         </div>
       </SignedIn>
