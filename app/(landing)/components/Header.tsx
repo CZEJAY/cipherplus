@@ -5,6 +5,7 @@ import { Plus } from "lucide-react";
 import { ModeToggle } from "@/components/ThemeSwitch";
 import Link from "next/link";
 import { SignedIn, SignedOut } from "@/components/SignedIn";
+import UserButton from "@/components/UserButton";
 
 const Header = () => {
   return (
@@ -62,7 +63,8 @@ const Header = () => {
               Dashboard
             </Button>
           </Link>
-          <div className="text-black dark:text-gray-50">
+          <div className="text-black dark:text-gray-50 flex  gap-1">
+            <UserButton />
             <ModeToggle />
           </div>
         </div>
