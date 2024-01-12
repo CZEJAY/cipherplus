@@ -8,9 +8,12 @@ interface AutoTextProps {
 const AutoText: React.FC<AutoTextProps> = ({ textArray, speed }) => {
   const [displayText, setDisplayText] = useState('');
   const [currentIndex, setCurrentIndex] = useState(0);
+  // console.log(textArray);
+
 
   useEffect(() => {
     const currentText = textArray[currentIndex];
+    
 
     const interval = setInterval(() => {
       if (displayText.length < currentText.length) {
@@ -18,6 +21,7 @@ const AutoText: React.FC<AutoTextProps> = ({ textArray, speed }) => {
       } else {
         setTimeout(() => {
           setDisplayText('');
+          // setCurrentIndex((prev) => prev++)
           setCurrentIndex((prevIndex) => (prevIndex + 1) % textArray.length);
         }, speed / 0.9); // Adjust the delay as needed
       }

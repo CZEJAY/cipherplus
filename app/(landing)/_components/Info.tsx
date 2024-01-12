@@ -16,7 +16,7 @@ const Info: React.FC<InfoProps> = ({ text }) => {
   return (
     <Popover>
       <PopoverTrigger><LucideInfo size={20} /></PopoverTrigger>
-      <PopoverContent className="w-auto p-1">{text}</PopoverContent>
+      <PopoverContent className="w-auto p-1 text-sm">{text}</PopoverContent>
     </Popover>
   );
 };

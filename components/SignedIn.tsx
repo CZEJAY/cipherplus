@@ -1,19 +1,18 @@
-"use clent"
-import { useSession } from "next-auth/react";
-import React, { useEffect }  from "react";
+import { auth } from "@/auth";
+
 
 interface SignedInProps {
     children: React.ReactNode;
 }
-export function SignedOut({ children }: SignedInProps) {
-    const { data: session, status } = useSession();
-    const loading = status === "loading";
+export async function SignedOut({ children }: SignedInProps) {
+    const data = await auth();
 
-    if (loading) {
-        return null;
-    }
 
-    if (session) {
+    // if (loading) {
+    //     return null;
+    // }
+
+    if (data) {
         return null;
     }
 
@@ -21,21 +20,10 @@ export function SignedOut({ children }: SignedInProps) {
 
 }
 
-export function SignedIn({ children }: SignedInProps) {
-    const { data: session, status } = useSession();
-    const loading = status === "loading";
+export async function SignedIn({ children }: SignedInProps) {
+    const data = await auth();
 
-    useEffect(() => {
-        if (session) {
-            console.log(session);
-        }
-    }, [session]);
-
-    if (loading) {
-        return null;
-    }
-
-    if (!session) {
+    if (!data) {
         return null;
     }
 

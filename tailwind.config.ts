@@ -1,12 +1,14 @@
-/** @type {import('tailwindcss').Config} */
-module.exports = {
+import type { Config } from "tailwindcss";
+
+const config = {
   darkMode: ["class"],
   content: [
-    './pages/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
-    './src/**/*.{ts,tsx}',
-	],
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
+  ],
+  prefix: "",
   theme: {
     container: {
       center: true,
@@ -50,6 +52,17 @@ module.exports = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        "logout-btn": "#FF5A5A",
+        "navbar-menu": "rgba(16, 16, 18, 0.6)",
+        "dark-1": "#000000",
+        "dark-2": "#121417",
+        "dark-3": "#101012",
+        "dark-4": "#1F1F22",
+        "light-1": "#FFFFFF",
+        "light-2": "#EFEFEF",
+        "light-3": "#7878A3",
+        "light-4": "#5C5C7B",
+        "gray-1": "#697C89",
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -58,12 +71,12 @@ module.exports = {
       },
       keyframes: {
         "accordion-down": {
-          from: { height: 0 },
+          from: { height: "0" },
           to: { height: "var(--radix-accordion-content-height)" },
         },
         "accordion-up": {
           from: { height: "var(--radix-accordion-content-height)" },
-          to: { height: 0 },
+          to: { height: "0" },
         },
       },
       animation: {
@@ -73,4 +86,6 @@ module.exports = {
     },
   },
   plugins: [require("tailwindcss-animate")],
-}
+} satisfies Config;
+
+export default config;

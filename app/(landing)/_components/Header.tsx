@@ -1,4 +1,4 @@
-"use client";
+
 import { Button } from "@/components/ui/button";
 import React from "react";
 import { Plus } from "lucide-react";
@@ -6,12 +6,13 @@ import { ModeToggle } from "@/components/ThemeSwitch";
 import Link from "next/link";
 import { SignedIn, SignedOut } from "@/components/SignedIn";
 import UserButton from "@/components/UserButton";
+import "../../globals.css"
 
 const Header = () => {
   return (
     <nav
       className="
-    w-full h-20 bg-transparent backdrop-blur-sm sm:backdrop-blur-lg text-white flex items-center justify-between px-[2.5vw] fixed top-0 shadow-xl z-50 
+    w-full h-20 bg-transparent backdrop-blur-sm sm:backdrop-blur-lg text-white flex items-center justify-between px-[2.5vw] fixed top-0 shadow-xl z-50
     "
     >
       <Link href={"/"} className="flex items-center gap-2">
@@ -64,7 +65,7 @@ const Header = () => {
             </Button>
           </Link>
           <div className="text-black dark:text-gray-50 flex  gap-1">
-            <ModeToggle />
+            {/* <ModeToggle /> */}
             <UserButton />
           </div>
         </div>

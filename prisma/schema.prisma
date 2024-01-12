@@ -11,16 +11,14 @@ datasource db {
 }
 
 model User {
-  id             String          @id @default(auto()) @map("_id") @db.ObjectId
+  id             String    @id @default(auto()) @map("_id") @db.ObjectId
   name           String?
   image          String?
-  email          String?         @unique
-  email_verified  Boolean?
+  email          String?   @unique
+  emailVerified Boolean?
   hashedpassword String?
-  createdAt      DateTime        @default(now())
-  updatedAt      DateTime        @updatedAt
-  favoritemovies String[]        @unique @db.String
-  notifications  String[]
+  createdAt      DateTime  @default(now())
+  updatedAt      DateTime  @updatedAt
   accounts       Account[]
 }
 
@@ -31,7 +29,6 @@ model Account {
   provider          String
   providerAccountId String
   refresh_token     String? @db.String
-  refresh_token_expires_in Int?
   access_token      String? @db.String
   expires_at        Int?
   token_type        String?
