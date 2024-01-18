@@ -10,7 +10,7 @@ export async function GET(request: NextRequest) {
     url: "https://remote-jobs-api.p.rapidapi.com/jobs",
     params: { company: "shopify" },
     headers: {
-      "X-RapidAPI-Key": "153747d565msh53c507f0a9fe569p163487jsne35155ec2a1e",
+      "X-RapidAPI-Key": process.env.RAPID_API_KEY,
       "X-RapidAPI-Host": "remote-jobs-api.p.rapidapi.com",
     },
   };

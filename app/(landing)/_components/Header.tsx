@@ -33,12 +33,12 @@ const Header = () => {
               className="
             dark:bg-gray-100  dark:text-sky-50
             gradient hover:opacity-70 transition-all duration-200
-             border"
+             border-0"
             >
               Get Started
             </Button>
           </Link>
-          <Link href={"/sign-in"}>
+          <Link href={"/auth/login"}>
             <Button
               variant="outline"
               className="text-gray-950 dark:text-gray-50"
