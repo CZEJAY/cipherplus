@@ -14,7 +14,7 @@ const MenuTrigger = () => {
   return (
     <Sheet>
       <SheetTrigger className="text-neutral-950 dark:text-neutral-50"><Menu /></SheetTrigger>
-      <SheetContent side={"left"}>
+      <SheetContent side={"left"} className="bg-dark-2">
         <SheetHeader>
           <SheetTitle>Are you sure absolutely sure?</SheetTitle>
           <SheetDescription>

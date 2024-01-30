@@ -8,7 +8,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "./ui/dropdown-menu";
-import { ArrowDownRightSquareIcon } from "lucide-react";
+import { ArrowDownRightSquareIcon, ArrowRightCircleIcon } from "lucide-react";
 import LogoutButton from "./auth/LogoutButton";
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 import { FaUser } from "react-icons/fa";
@@ -31,7 +31,7 @@ const UserButton = () => {
       <DropdownMenuTrigger>
         <Avatar className="border">
           <AvatarImage src={user?.image || ""} className="" />
-          <AvatarFallback className="bg-black">
+          <AvatarFallback className="bg-emerald-500/70">
             <FaUser className="text-white" />
           </AvatarFallback>
         </Avatar>
@@ -39,7 +39,7 @@ const UserButton = () => {
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-40" align="end">
         <DropdownMenuItem onClick={() => signOut()}>
-          <ArrowDownRightSquareIcon className="h-4 w-4 mr-2" />
+          <ArrowRightCircleIcon className="h-4 w-4 mr-2" />
           Logout
         </DropdownMenuItem>
       </DropdownMenuContent>

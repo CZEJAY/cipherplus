@@ -2,8 +2,15 @@ import React from "react";
 
 const page = () => {
   return (
-    <>
-      <div className="w-[1440px] h-[960px] bg-white justify-center items-start inline-flex">
+    <main className="flex flex-row">
+      
+    </main>
+  );
+};
+
+export default page;
+/* 
+  <div className="w-[1440px] h-[960px] bg-white justify-center items-start inline-flex">
         <div className="w-20 self-stretch py-5 bg-gray-50 border-r border-slate-200 flex-col justify-start items-center gap-2.5 inline-flex">
           <div className="self-stretch h-[488px] flex-col justify-start items-center gap-64 flex">
             <div className="self-stretch h-[488px] flex-col justify-start items-center gap-5 flex">
@@ -669,8 +676,4 @@ const page = () => {
           </div>
         </div>
       </div>
-    </>
-  );
-};
-
-export default page;
+*/

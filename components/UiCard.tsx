@@ -3,47 +3,71 @@ import { uiCardType } from "@/types";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 
-const UiCard = () => {
-  const [jobs, setJobs] = useState<uiCardType[] | any[]>([]);
-  const [loading, setLoading] = useState(false);
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
+import Image from "next/image";
+import { generateJobs } from "@/lib/utils";
+import clsx from "clsx";
 
-  useEffect(() => {
-    axios
-      .get("/api/GetRemoteJob", {
-        params: {
-          company: "shopify",
-        },
-      })
-      .then((response) => {
-        setJobs(response.data.data.items);
-        console.log(response.data.data.items);
-        
-        setLoading(true);
-      })
-      .catch((error: any) => {
-        console.error(error);
-      })
-      .finally(() => {
-        setLoading(false);
-      })
-  }, []);
+const UiCard = () => {
+  // const [jobs, setJobs] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const jobs = generateJobs()
+  // useEffect(() => {
+  //   axios
+  //     .get("/api/GetRemoteJob", {
+  //       params: {
+  //         company: "shopify",
+  //       },
+  //     })
+  //     .then((response) => {
+  //       setJobs(response.data.data.items);
+  //       console.log(response.data.data);
+
+  //       setLoading(true);
+  //     })
+  //     .catch((error: any) => {
+  //       console.error(error);
+  //     })
+  //     .finally(() => {
+  //       setLoading(false);
+  //     });
+  // }, []);
   return (
-    <div>
-      <div className="flex flex-wrap gap-4">
-        {
-        loading && jobs.length > 0 &&
-          jobs.map((job: uiCardType) => {
-            return (
-              <div key={job.id} className="bg-white p-4 rounded-lg shadow-lg">
-                <h1 className="text-light-1">{job.company_name}</h1>
-              </div>
-            );
-          })}
-      </div>
-      <div className="flex justify-center mt-8">
-        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-          Load More
-        </button>
+    <div className="w-full items-center px-4">
+      <div className="flex items-center">
+        <Carousel className="" plugins={[Autoplay({ delay: 10000 })]}>
+          <CarouselContent className="-ml-2 flex gap-2 md:-ml-4">
+            {jobs.map((job: uiCardType) => (
+              <CarouselItem key={job.id} className={clsx(`p-2 md:pl-4 border rounded bg-url(${job.image})`,
+              )}>
+                <div className="flex flex-col gap-2">
+                  <div className="flex">
+                    <Image
+                      width={100}
+                      height={100}
+                      src={job.company_logo}
+                      alt="company logo"
+                      className="w-8 h-8 rounded-full"
+                    />{" "}
+                    <h2 className="text-xl font-bold">{job.title}</h2>
+                  </div>
+                  <p className="text-sm">{job.company_name}</p>
+                  <p className="text-sm">{job.location}</p>
+                  <p className="text-sm">{job.date}</p>
+                </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselNext />
+          <CarouselPrevious />
+        </Carousel>
       </div>
     </div>
   );
